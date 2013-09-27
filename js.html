@@ -37,44 +37,32 @@
 The elements that have required more attention in the implementation were the desktop and the panel achieved by the Bezier curves and surfaces.<br>
 I tried on several occasions to use a code lean and a programming technique that allows 3D to produce a final project lightest possible</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+  <li class="download"><a class="buttons" href="https://github.com/cvdlab-cg/274013/blob/master/final-project/Javascript/modular.js">Modular code</a></li>
 
 <img src="http://sbkgladiator.github.io/finalproject/images/model1js.jpg"></img>
 <img src="http://sbkgladiator.github.io/finalproject/images/model2js.jpg"></img>
+<img src="http://sbkgladiator.github.io/finalproject/images/scrivaniajs.jpg"></img>
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>images</h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Details</h3>
 
 <p> Images of the elements in Plasm.js </p><br>
-Maniglia grigia<br>
-          <li class="download"><a class="buttons" href="https://github.com/cvdlab-cg/274013/blob/master/final-project/Python/modular.py">Pyplasm code</a></li>
+<H3>Maniglia grigia</h3><br>
+       
 <br>
-<p>The peculiarity of this object is the parameter that allows you to vary the length of the handle as the handle of the cabinet is the longest of the library and allows me to vary the length by changing only the parameter at the time of insertion into the cabinet frame<p>
-<img src="http://sbkgladiator.github.io/finalproject/images/mobilettopy.jpg"></img>
-<p>  cubic library  </p><br>
-          <li class="download"><a class="buttons" href="https://github.com/cvdlab-cg/274013/blob/master/final-project/Python/libreria.py">Pyplasm code</a></li>
-<img src="http://sbkgladiator.github.io/finalproject/images/libreriapy.jpg"></img>
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>details</h3>
-
-<p>  Wheel of furnishings<br><br>
-          <li class="download"><a class="buttons" href="https://github.com/cvdlab-cg/274013/blob/master/final-project/Python/rotella.py">Pyplasm code</a></li>
-<br>The space between the wheel axle and the wheel is just to better understand the structure of the object: in the final model the pin is bigger and the space is null<br>It is shifted in such a way as to be put just below a cabinet or a foot with minimal use of code can</p>
-<img src="http://sbkgladiator.github.io/finalproject/images/ruotapy.jpg"></img>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>javascript</h3>
-
-<p>fff</p>
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>xxxxxxx</h3>
-
-<p>  fff</p>
-
+<p>The peculiarity of this object is the parameter that allows you to vary the length of the handle as the handle of the cabinet is the longest of the library and allows me to vary the length by changing only the parameter at the time of insertion into the cabinet frame as she is called in the second image<p>
+<img src="http://sbkgladiator.github.io/finalproject/images/manigjs.jpg"></img>
+<img src="http://sbkgladiator.github.io/finalproject/images/libreriajs.jpg"></img>
+<pre><code>//maniglia grigia
+function manig(l){
+var pern=R([0,2])(PI/2)( EXTRUDE([l])(DISK(0.05)()) )
+var domain = PROD1x1([INTERVALS(1)(20),INTERVALS(1)(6)]);
+var ncpVector = [0,-0.5,0.5];
+var funProfile = BEZIER(S0)([[0.13, 0,0], [-0.05, -0.08,0], [-0.05, 0.10,0], [0.13, 0,0]]);
+var funProfile2 = BEZIER(S0)([[0.13+l-0.13, 0,0], [-0.05+l-0.13, -0.08,0], [-0.05+l-0.13, 0.10,0], [0.13+l-0.13, 0,0]]);
+var out =STRUCT([pern, MAP(CYLINDRICAL_SURFACE(funProfile)(ncpVector))(domain),MAP(CYLINDRICAL_SURFACE(funProfile2)(ncpVector))(domain) ]);
+return out;
+</code></pre><br>
 
 
 <h3>
