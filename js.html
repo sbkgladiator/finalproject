@@ -53,7 +53,7 @@ I tried on several occasions to use a code lean and a programming technique that
 <p>The peculiarity of this object is the parameter that allows you to vary the length of the handle as the handle of the cabinet is the longest of the library and allows me to vary the length by changing only the parameter at the time of insertion into the cabinet frame as she is called in the second image<p>
 <img src="http://sbkgladiator.github.io/finalproject/images/manigjs.jpg"></img>
 <img src="http://sbkgladiator.github.io/finalproject/images/libreriajs.jpg"></img>
-<pre><code>//maniglia grigia
+<pre><code>//maniglia grigia parametrica
 function manig(l){
 var pern=R([0,2])(PI/2)( EXTRUDE([l])(DISK(0.05)()) )
 var domain = PROD1x1([INTERVALS(1)(20),INTERVALS(1)(6)]);
@@ -62,6 +62,7 @@ var funProfile = BEZIER(S0)([[0.13, 0,0], [-0.05, -0.08,0], [-0.05, 0.10,0], [0.
 var funProfile2 = BEZIER(S0)([[0.13+l-0.13, 0,0], [-0.05+l-0.13, -0.08,0], [-0.05+l-0.13, 0.10,0], [0.13+l-0.13, 0,0]]);
 var out =STRUCT([pern, MAP(CYLINDRICAL_SURFACE(funProfile)(ncpVector))(domain),MAP(CYLINDRICAL_SURFACE(funProfile2)(ncpVector))(domain) ]);
 return out;
+}
 </code></pre><br>
 
 
